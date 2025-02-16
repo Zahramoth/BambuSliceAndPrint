@@ -46,9 +46,10 @@ def main():
 
     upload_ftp(output_3mf, PrinterIP, user, password, output_3mf,retries=3)
   
-    #publish_mqtt("settings\\message.json",output_3mf,PrinterIP,password,serial)
     
-    #print("Process completed successfully.")
+    publish_mqtt("settings\\message.json",output_3mf,PrinterIP,password,serial)
+    
+    print("Process completed successfully.")
 
 if __name__ == "__main__":
     main()

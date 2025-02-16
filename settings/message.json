@@ -18,7 +18,7 @@
         "flow_cali": false,
         "vibration_cali": true,
         "layer_inspect": false,
-        "ams_mapping": "",
+        "ams_mapping": "3",
         "use_ams": true
     }
 }

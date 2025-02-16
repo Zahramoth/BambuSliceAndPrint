@@ -1,0 +1,13 @@
+{
+    "filament_settings_id": [
+        "Generic PLA - Copy"
+    ],
+    "from": "User",
+    "inherits": "Generic PLA",
+    "is_custom_defined": "0",
+    "name": "Generic PLA - Copy",
+    "nozzle_temperature": [
+        "230"
+    ],
+    "version": "1.10.0.33"
+}
