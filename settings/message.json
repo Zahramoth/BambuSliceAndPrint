@@ -1,0 +1,24 @@
+{"print": {
+        "sequence_id": "50001",
+        "command": "project_file",
+        "param": "Metadata/plate_1.gcode",
+        "project_id": "0",
+        "profile_id": "0", 
+        "task_id": "0", 
+        "subtask_id": "0", 
+        "subtask_name": "",
+
+        "file": "", 
+        "url": "file:///sdcard/cubetest.gcode.3mf", 
+        "md5": "",
+
+        "timelapse": false,
+        "bed_type": "textured_plate",
+        "bed_levelling": true,
+        "flow_cali": false,
+        "vibration_cali": true,
+        "layer_inspect": false,
+        "ams_mapping": "",
+        "use_ams": true
+    }
+}
