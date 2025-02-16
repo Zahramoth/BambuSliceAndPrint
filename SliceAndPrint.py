@@ -1,17 +1,17 @@
 import os
 import shutil
 
-from utils import load_config,extract_3mf,slice_3mf,repackage_3mf,upload_ftp,publish_mqtt
+from utils import parse_arguments,load_config,extract_3mf,slice_3mf,repackage_3mf,upload_ftp,publish_mqtt
 
 
 def main():
 
 # Parse command-line arguments
-    #args = parse_arguments()
-    #input_3mf = args.input_3mf  # ✅ Get input 3MF file from command line
-    input_3mf = "3DBenchy.3mf"
+    args = parse_arguments()
+    input_3mf = args.input_3mf  # ✅ Get input 3MF file from command line
+    #input_3mf = "XYZ+Test.3mf"
     # Load config at the start
-    config = load_config("settings\config.json")
+    config = load_config("settings\\config.json")
 
     # Assign values from the config
     extract_folder = config["extract_folder"]
@@ -23,7 +23,7 @@ def main():
     user = config["user"]
     password = config["password"]
     serial = config["serial"]
-
+    Debug  = config["Debug"]
     # ✅ Now you can use these values anywhere in the script dynamically
     print(f"🎯 Using slicer: {slicer_path}")
     print(f"📡 Printer IP: {PrinterIP}")
@@ -33,8 +33,8 @@ def main():
    
     extract_3mf(input_3mf, extract_folder)
     print("slicing file "+ input_3mf)
-    slice_3mf(input_3mf, output_dir, slicer_path, settings_files)
-    
+    slice_3mf(input_3mf, output_dir, slicer_path, settings_files,Debug)
+ 
     metadata_path = os.path.join(extract_folder, 'Metadata')
     os.makedirs(metadata_path, exist_ok=True)
   
@@ -46,7 +46,7 @@ def main():
 
     upload_ftp(output_3mf, PrinterIP, user, password, output_3mf,retries=3)
   
-    publish_mqtt("settings\\message.json",output_3mf,PrinterIP,password,serial)
+    #publish_mqtt("settings\\message.json",output_3mf,PrinterIP,password,serial)
     
     #print("Process completed successfully.")
 

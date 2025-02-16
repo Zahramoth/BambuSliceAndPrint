@@ -1,0 +1,11 @@
+{
+    "extract_folder": "extracted_3mf",
+    "output_dir": "output",
+    "output_gcode": "plate_1.gcode",
+    "settings_files": ["settings/Bambu Lab P1S 0.4 nozzle.json"],
+    "slicer_path": "C:\\Program Files\\OrcaSlicer\\orca-slicer.exe",
+    "PrinterIP": "YourPrinterIP",
+    "user": "bblp",
+    "password": "YourAccessCode",
+    "serial": "YourPrinterSerial"
+}

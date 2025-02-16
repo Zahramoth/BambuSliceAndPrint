@@ -38,9 +38,12 @@ def extract_3mf(archive_path, extract_path):
     with zipfile.ZipFile(archive_path, 'r') as zip_ref:
         zip_ref.extractall(extract_path)
 
-def slice_3mf(input_3mf, output_dir, slicer_path, settings_files):
+def slice_3mf(input_3mf, output_dir, slicer_path, settings_files,Debug):
     settings_cmd = " ".join([f'--load-settings "{s}"' for s in settings_files])
-    command = f'"{slicer_path}" {settings_cmd} --outputdir "{output_dir}" --slice 1 "{input_3mf}"'
+    if Debug == "True":
+        command = f'"{slicer_path}" {settings_cmd} --outputdir "{output_dir}" --slice 1 "{input_3mf}" > Output.txt'
+    else:
+        command = f'"{slicer_path}" {settings_cmd} --outputdir "{output_dir}" --slice 1 "{input_3mf}"'
     subprocess.run(command, shell=True, check=True)
 
 def repackage_3mf(folder_path, output_3mf):
